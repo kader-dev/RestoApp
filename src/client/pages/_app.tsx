@@ -1,4 +1,6 @@
 import App, { AppProps, AppContext } from 'next/app'
+import '../styles/globals.css'
+import { wrapper } from '../store';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />
@@ -11,4 +13,4 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   return { ...appProps }
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);
