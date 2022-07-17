@@ -2,10 +2,12 @@ import { configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 import { Action } from 'redux';
 import productReducer from './slices/product';
+import userReducer from './slices/userSlice';
 
 const makeStore = () => configureStore({
     reducer: {
-        product: productReducer
+        product: productReducer,
+        user: userReducer
     },
     devTools: true
 });

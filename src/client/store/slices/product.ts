@@ -1,4 +1,4 @@
-import { AppThunk, AppState } from './../index';
+import { AppThunk, AppState } from '../store';
 import { createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 

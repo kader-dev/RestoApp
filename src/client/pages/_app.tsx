@@ -1,6 +1,6 @@
 import App, { AppProps, AppContext } from 'next/app'
 import '../styles/globals.css'
-import { wrapper } from '../store';
+import { wrapper } from '../store/store';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />
