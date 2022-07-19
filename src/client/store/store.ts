@@ -3,11 +3,15 @@ import { createWrapper } from 'next-redux-wrapper';
 import { Action } from 'redux';
 import productReducer from './slices/product';
 import userReducer from './slices/userSlice';
+import categoryReducer from './slices/categorySlice';
+import itemReducer from './slices/itemSlice';
 
 const makeStore = () => configureStore({
     reducer: {
         product: productReducer,
-        user: userReducer
+        user: userReducer,
+        category: categoryReducer,
+        item: itemReducer
     },
     devTools: true
 });

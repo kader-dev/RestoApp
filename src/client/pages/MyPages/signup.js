@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../store/slices/userActions'
 import { useEffect } from 'react'
 import { useRouter } from "next/router";
+import { getCategories } from '~client/store/slices/categoryActions';
 
 const LoginScreen = () => {
   const { loading, userInfo, error, success } = useSelector((state) => state.user)
@@ -20,7 +21,6 @@ const LoginScreen = () => {
 
   const submitForm = (data) => {
     dispatch(userLogin(data))
-
   }
 
   return (

@@ -1,3 +1,4 @@
+import { ItemModule } from './modules/item/item.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -6,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ViewModule } from '~server/modules/view/view.module'
 import { DummyModule } from '~server/modules/dummy/dummy.module'
 import { MongooseModule } from '@nestjs/mongoose';
+import { CategoryModule } from './modules/categorie/category.module';
 
 @Module({
   imports: [
@@ -19,7 +21,9 @@ import { MongooseModule } from '@nestjs/mongoose';
     DummyModule,
     ViewModule,
     UserModule,
-    AuthModule],
+    AuthModule,
+    CategoryModule,
+    ItemModule],
   controllers: [],
   providers: []
 })

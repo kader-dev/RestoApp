@@ -1,8 +1,11 @@
 import App, { AppProps, AppContext } from 'next/app'
 import '../styles/globals.css'
 import { wrapper } from '../store/store';
+import Header from '~client/components/Header';
+import Nav from '~client/components/nav';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+
   return <Component {...pageProps} />
 }
 
