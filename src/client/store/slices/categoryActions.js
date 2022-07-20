@@ -1,10 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from 'axios'
 
-export const CreateCategory = createAsyncThunk(
+export const CreateNewCategory = createAsyncThunk(
     'cat/create',
     async ({ name, user }, { rejectWithValue }) => {
         try {
+            // const { userData } = getState()
+            // const user = userData.userInfo._id
+            console.log("ddd" + user._id)
             const config = {
                 headers: {
                     'Content-Type': 'application/json',

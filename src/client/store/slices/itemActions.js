@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from 'axios'
 
-export const CreateItem = createAsyncThunk(
+export const CreateNewItem = createAsyncThunk(
     'item/create',
     async ({ name, description, price, category }, { rejectWithValue }) => {
         try {

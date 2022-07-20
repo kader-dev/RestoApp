@@ -3,33 +3,27 @@ import { connect } from 'react-redux';
 import { useDispatch, useSelector } from "react-redux";
 import { getAllItems } from '~client/store/slices/itemActions';
 import Image from "next/image";
-import axios from 'axios'
-const options = {
-    method: 'GET',
-    url: 'https://pizza-and-desserts.p.rapidapi.com/deserts',
-    headers: {
-        'X-RapidAPI-Key': 'cac705d78amsh451398b45c870a5p176014jsn44aed69a4449',
-        'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com'
-    }
-};
+import { HomeIcon, CollectionIcon, ServerIcon, PlusIcon } from "@heroicons/react/outline";
+import { useRouter } from 'next/router';
 
 
 function item(props) {
     const dispatch = useDispatch()
+    const router = useRouter();
     const { loading, userInfo, error, success } = useSelector((state) => state.user)
     useEffect(() => {
         if (userInfo) {
             dispatch(getAllItems());
         }
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
+
     }, [])
     return (
-        <>
-            <div className='px-5 my-10 sm:grid md:grid-cols-3 xl:grid-cols-4'>
+        <> <div className="flex items-center cursor-pointer group mt-7 hover:text-white" on onClick={() => { router.push('/MyPages/createItem') }}>
+            <PlusIcon className="h-8 m-1" />
+            <p >New Item</p>
+        </div>
+            <div className='px-5 my-10 sm:grid md:grid-cols-2 xl:grid-cols-4'>
+
                 {
                     props.item && props.item.categories?.Items?.length !== 0 ? props.item.categories?.Items?.map((el, key) => (
                         <div key={key} className="cursor-pointer group p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50">

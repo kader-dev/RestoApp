@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { CreateItem, getAllItems, getItems } from "./itemActions"
+import { CreateNewItem, getAllItems, getItems } from "./itemActions"
 
 
 
@@ -15,7 +15,7 @@ const itemSlice = createSlice({
     reducers: {},
     extraReducers: {
 
-        [CreateItem.fulfilled]: (state) => {
+        [CreateNewItem.fulfilled]: (state) => {
             state.success = true
         },
         [getItems.fulfilled]: (state, { payload }) => {

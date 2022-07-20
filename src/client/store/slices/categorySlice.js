@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { CreateCategory, getCategories } from "./categoryActions"
+import { CreateNewCategory, getCategories } from "./categoryActions"
 
 
 
@@ -15,7 +15,7 @@ const categorySlice = createSlice({
     reducers: {},
     extraReducers: {
 
-        [CreateCategory.fulfilled]: (state) => {
+        [CreateNewCategory.fulfilled]: (state) => {
             state.success = true
         },
         [getCategories.fulfilled]: (state, { payload }) => {
